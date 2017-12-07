@@ -1,0 +1,130 @@
+.container {
+  margin-left: 10%;
+}
+
+.header {
+  text-align: left;
+  font-size: 28pt;
+  font-family: Arial;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.subheader {
+  text-align: left;
+  color: grey;
+  font-weight: normal;
+}
+
+.inputBlock {
+  height: 20%;
+  float: left;
+  display: block;
+  width: 24%;
+  margin: 5% 5px 0 0;
+  /*border: 1px solid blue;*/
+
+}
+
+.scheme {
+  float: left;
+  display: block;
+  width: 24%;
+  #border: 1px solid blue;
+  margin: 5% 5px;
+}
+
+.input {
+  margin: 10px auto;
+}
+
+.output {
+  float: left;
+  display: block;
+  width: 24%;
+  #border: 1px solid blue;
+  margin: 5% 5px;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin: 0px 0px 10px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.textarea {
+  margin: 10px 0px;
+  width: 300px;
+  height: 100px;
+  resize: none;
+}
+
+.outputarea {
+  float: center;
+  margin: 5;
+  width: 200%;
+  height: 100px;
+  resize: none;
+}
+
+.set{
+  font-family: Calibri;
+}
+
+
+#hessian {
+  margin: 0px 0px;
+  width: 200px;
+  height: 300px;
+  resize: none;
+}
+
+#metodZS {
+  margin: 10px 0px;
+  width: 200px;
+  height: 300px;
+  resize: none;
+}
+
+#metodKV {
+  margin: 20px 0px;
+  width: 200px;
+  height: 300px;
+  resize: none;
+}
+
+
