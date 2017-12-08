@@ -1,5 +1,3 @@
-
-
 var stages = 3; //columns
 var height = 2; //rows
 var buf = '';
@@ -212,7 +210,7 @@ function parse(cmd_string) {
     var ret = {
         name: cmd_string,
         steps: null,
-        opr: [],
+        operands: [],
         f1: null,
         f2: 1,
         f3: null,
@@ -245,17 +243,22 @@ function parse(cmd_string) {
     } while (!commands[mas_cmd[i]])
 
     var tmp = mas_cmd[mas_cmd.length-1]; // переменные в команде
-
+    //console.log("tmp-"+tmp);
     //фаза 3
-    if (commands[mas_cmd[i]].f1==1 && tmp != null && tmp != ""){ //тип функции - с переменными или нет
+    //if (commands[mas_cmd[i]].f1==1 && tmp != null && tmp != ""){ //тип функции - с переменными или нет
+    if (tmp != null && tmp != ""){ //тип функции - с переменными или нет
         i=0;
-        ret.opr = tmp.split(",");
+        ret.operands = tmp.split(",");
+        //console.log("ret.operands-"+ret.operands);
+
         var RegOperand = /\[\S+\]/;
-        while (i<ret.opr.length){
-            if (RegOperand.test(ret.opr[i])){
+        while (i<ret.operands.length){
+            //console.log("1-"+ret.operands[i]);
+            if (RegOperand.test(ret.operands[i])){
                 steps+=3;
                 ret.f3+=3;
-            } else if (ret.opr[i]!=null && ret.opr[i]!=""){
+                ret.operands[i] = ret.operands[i].replace(/[\[\]]/gi,''); // стандартизация переменной для использования ее как адрес (убрать [])
+            } else if (ret.operands[i]!=null && ret.operands[i]!=""){
                 steps+=1;
                 ret.f3+=1;
             }
@@ -290,31 +293,47 @@ function parse(cmd_string) {
     return (ret);
 }
 
-console.log(parse("ZERO: mov AX,[CX]"));
+//var mas_tmp = //parse("ZERO: mov AX,[CX]");
 
 function createMatrix(string_arr){
-    var i = 0;
-    var j = 0;
+    var i = 1;
+    var j = {
+            min: 1,
+            max: 5,
+            curr: 1
+        };
     var final_matrix = []; // матрица для вывода
     var variables = []; //очередь занятых переменных
     var obj; //объект parse
     var max = 0; //максимальное количество шагов
+    final_matrix[0] = [];
+    final_matrix[0][0] = "#";
+    final_matrix[0].push("1","2","3","4","5");
     while (i<string_arr.length) {
-        obj = parse(string_arr[j]);
+        obj = parse(string_arr[i]);
         if (max<obj.steps) {
             max = obj.steps;
         }
-        final_matrix[j][i] = obj.name;
+        final_matrix[i] = [];
+        final_matrix[i][0] = i;
+        final_matrix[i].push(obj.name);
+        variables.push(obj.operands);
+
+        console.log("v-"+variables);
 
 
 
 
-
-        j++;
+        i++;
     }
 
 
     return (final_matrix)
 }
 
-console.log(createMatrix());
+var mas_tmp = ["SUB AX,VAR1", "MOV DX,VAR2", "JMP [DX]", "PUSH VAR3"];
+
+//console.log(parse(mas_tmp[2]));
+console.log(createMatrix(mas_tmp));
+
+
