@@ -1,0 +1,99 @@
+.panel {
+	position: fixed;
+	top: 0;
+	left: 0;
+	float: left;
+	display: inline-block;
+	width: 30vw;
+	min-width: 300px;
+	min-height: 100vh;
+	background-color: #253759; 
+	height:auto;
+
+
+	overflow:auto;
+}
+
+.header {
+	text-align: left;
+	font-size: 20pt;
+	font-family: Arial;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	margin: 5% 5% 0 5%;
+	display: block;
+}
+
+.subheader {
+	text-align: left;
+	color: #A1A1A1;
+	font-weight: normal;
+	margin: 0 5%;
+	display: block;
+}
+
+.controlsBlock {
+	margin: 5%;
+	display: block;
+}
+
+
+.textarea {
+	height: 200px;
+	width: 100%;
+	resize: none;
+	border: none;
+	box-sizing: border-box;
+}
+
+
+.buttonDiv{
+	position: absolute;
+	bottom: 0;
+	width: 90%;
+	margin: 5%;
+}
+
+
+
+
+
+.button {
+	background-color: #FFFFFF; /* Green */
+	border: none;
+	color: #253759;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	transition: all 0.5s;
+	cursor: pointer;
+	width:100%;
+}
+
+.button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.button span:after {
+	content: '»';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 25px;
+}
+
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
