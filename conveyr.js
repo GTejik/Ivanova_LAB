@@ -309,8 +309,8 @@ function createMatrix(string_arr){
     final_matrix[0] = [];
     final_matrix[0][0] = "#";
     final_matrix[0].push("1","2","3","4","5");
-    while (i<string_arr.length) {
-        obj = parse(string_arr[i]);
+    while (i<string_arr.length+1) {
+        obj = parse(string_arr[i-1]);
         if (max<obj.steps) {
             max = obj.steps;
         }
