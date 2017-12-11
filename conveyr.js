@@ -20,7 +20,7 @@ function matrixArray(rows, columns) {
 function printMatrix(matrix) {
     for (var i = 0; i < matrix.length; i++) {
         for (var j = 0; j < matrix[0].length; j++) {
-            buf = buf + matrix[i][j] + ' '; // заполнение буфера строкой
+            buf = buf + matrix[i][j] + ' | '; // заполнение буфера строкой
         }
         console.log(buf); // вывод строки
         buf = ''; // очистка буфера
@@ -296,35 +296,197 @@ function parse(cmd_string) {
 //var mas_tmp = //parse("ZERO: mov AX,[CX]");
 
 function createMatrix(string_arr){
-    var i = 1;
-    var j = {
-            min: 1,
-            max: 5,
-            curr: 1
-        };
+    var i = 0;
+    var j = 0;
     var final_matrix = []; // матрица для вывода
     var variables = []; //очередь занятых переменных
-    var obj; //объект parse
+    var obj = []; //объект parse
     var max = 0; //максимальное количество шагов
     final_matrix[0] = [];
     final_matrix[0][0] = "#";
     final_matrix[0].push("1","2","3","4","5");
-    while (i<string_arr.length+1) {
-        obj = parse(string_arr[i-1]);
-        if (max<obj.steps) {
-            max = obj.steps;
+
+    //создание массива объектов
+    while (i<string_arr.length) {
+        obj[i] = {
+            cmd: parse(string_arr[i]),
+            phase: 1,
+            flag: false
         }
-        final_matrix[i] = [];
-        final_matrix[i][0] = i;
-        final_matrix[i].push(obj.name);
-        variables.push(obj.operands);
+        //max num of steps
+        if (max < obj[i].cmd.steps) {
+            max = obj[i].cmd.steps;
+        }
+    i++;
+    }
+    i = 1;
 
-        console.log("v-"+variables);
+    //сщздание индексов
+    // while (i<string_arr.length+1) {
+    //     final_matrix[i] = [];
+    //     final_matrix[i][0] = i;
+    //     i++;
+    // }
+    //конвейер
+    i = 1;
+    var stp = 1;
+    var status_phase = {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+    };
+    var wait_flag = {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+    };
+    var clear_op = [];
+    var six = 0;
+    var tmp_flag = 0;
+    var flag_operands = false;//флаг занятости операнд
+    while (six<string_arr.length) {//шаги
+        final_matrix[stp] = [];
+        final_matrix[stp][0] = stp;
+
+        while (i<string_arr.length+1) {//команды
+
+            j = 1;
+            while (j < 6) {//фазы конвейера
+                // flag_operands = false;
+                var k = 0;
+                while (obj[i - 1].phase == j && !obj[i - 1].flag && k < obj[i - 1].cmd.operands.length && !status_phase[j] && !wait_flag[j]) {
+                    if (variables.indexOf(obj[i - 1].cmd.operands[k]) != -1) {
+                        flag_operands = true;
+                        // wait_flag = true;
+                    } else if (!flag_operands) {
+                        variables.push(obj[i - 1].cmd.operands[k]);
+                        // wait_flag = false;
+                    }
+                    k++;
+                }
 
 
+                //фаза соответствует .. не было перехода фаз .. переменные свободны .. фаза свободна на шаге .. нет задержки по фазе
+                if (obj[i - 1].phase == j && !obj[i - 1].flag && !flag_operands && !status_phase[j] && !wait_flag[j]) {
+                    final_matrix[stp][j] = obj[i - 1].cmd.name;
+                    status_phase[j] = true;
+                    tmp_flag = 0;
+                    switch (j) {
+                        case 1:
+                            if (obj[i-1].cmd.f1>1){
+                                obj[i - 1].cmd.f1--;
+                            } else {
+                                obj[i - 1].phase++;
+                                tmp_flag = 1;
+                            }
+                            break;
+                        case 2:
+                            if (obj[i-1].cmd.f2>1){
+                                obj[i - 1].cmd.f2--;
+                            } else {
+                                obj[i - 1].phase++;
+                                tmp_flag = 1;
+                            }
+                            break;
+                        case 3:
+                            if (obj[i-1].cmd.f3>1){
+                                obj[i - 1].cmd.f3--;
+                            } else {
+                                obj[i - 1].phase++;
+                                tmp_flag = 1;
+                            }
+                            break;
+                        case 4:
+                            if (obj[i-1].cmd.f4>1){
+                                obj[i - 1].cmd.f4--;
+                            } else {
+                                obj[i - 1].phase++;
+                                tmp_flag = 1;
+                            }
+                            break;
+                        case 5:
+                            if (obj[i-1].cmd.f5>1){
+                                obj[i - 1].cmd.f5--;
+                            } else {
+                                obj[i - 1].phase++;
+                                tmp_flag = 1;
+                            }
+                            break;
+                    }
+                    //obj[i - 1].phase++;
+                    if (obj[i-1].phase==6){
+                       six++;
+                    }
+                    obj[i - 1].flag = true;
 
+                    //TODO убрать очистку переменных по флагу, и чтоб не падало
+                    
+                    // console.log();
+                    // console.log("tm-"+tmp_flag);
+                    // if (tmp_flag == 1 && obj[i-1].phase==6){
+                    //      console.log("op");
 
-        i++;
+                        k = 0;
+                        while (k < obj[i - 1].cmd.operands.length) {
+                            clear_op.push(obj[i - 1].cmd.operands[k]);
+                            k++;
+                        }
+                    // }
+
+                    // console.log();
+                    // console.log(obj[i - 1].cmd.name+" - "+obj[i - 1].cmd.operands);
+                    // console.log(variables);
+                    // console.log(final_matrix[stp]);
+                }
+                else {
+
+                    // console.log("lel3");
+
+                    if (j > 1 && (obj[i - 1].phase == j && !obj[i - 1].flag && !flag_operands && status_phase[j] || wait_flag[j])) {
+                        final_matrix[stp][j - 1] = final_matrix[stp - 1][j - 1];
+                    }
+                }
+                if (flag_operands){
+                    wait_flag[j] = true;
+                }
+
+                // console.log("lel1");
+
+                //console.log("v-" + variables);
+
+                j++;
+                flag_operands=false;
+            }
+
+            i++;
+        }
+
+        //очистка переменных
+        j = 0;
+        while (j < obj.length) {
+            obj[j].flag = false;
+            j++;
+        }
+        j = 1;
+        while (j < 6) {
+            wait_flag[j] = false;
+            status_phase[j] = false;
+            j++;
+        }
+        while (clear_op.length > 0) {
+            console.log("clear - "+clear_op);
+            variables.splice(variables.indexOf(clear_op[0]), 1);
+            clear_op.shift();
+        }
+
+        flag_operands = false;
+        i=1;
+        stp++;
+
     }
 
 
@@ -334,6 +496,5 @@ function createMatrix(string_arr){
 var mas_tmp = ["SUB AX,VAR1", "MOV DX,VAR2", "JMP [DX]", "PUSH VAR3"];
 
 //console.log(parse(mas_tmp[2]));
-console.log(createMatrix(mas_tmp));
-
-
+//console.log(createMatrix(mas_tmp));
+printMatrix(createMatrix(mas_tmp));
