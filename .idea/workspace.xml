@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acccf497-8969-4199-a1c1-9d504f937dbc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/conveyr.js" afterPath="$PROJECT_DIR$/conveyr.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="conveyr.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/conveyr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="426" column="20" lean-forward="true" selection-start-line="426" selection-start-column="20" selection-end-line="426" selection-end-column="20" />
+            <state relative-caret-position="2315">
+              <caret line="518" column="42" lean-forward="false" selection-start-line="518" selection-start-column="42" selection-end-line="518" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -129,12 +128,12 @@
       <option name="presentableId" value="Default" />
       <updated>1512720874164</updated>
       <workItem from="1512720875395" duration="19526000" />
-      <workItem from="1513003607154" duration="8888000" />
+      <workItem from="1513003607154" duration="13161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28414000" />
+    <option name="totallyTimeSpent" value="32687000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -176,14 +175,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/conveyr.js</url>
-          <line>429</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager>
@@ -255,8 +246,8 @@
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/conveyr.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="426" column="20" lean-forward="true" selection-start-line="426" selection-start-column="20" selection-end-line="426" selection-end-column="20" />
+        <state relative-caret-position="2315">
+          <caret line="518" column="42" lean-forward="false" selection-start-line="518" selection-start-column="42" selection-end-line="518" selection-end-column="42" />
           <folding />
         </state>
       </provider>

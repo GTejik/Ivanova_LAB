@@ -311,7 +311,9 @@ function createMatrix(string_arr){
         obj[i] = {
             cmd: parse(string_arr[i]),
             phase: 1,
-            flag: false
+            flag: false,
+            step_flag: false
+
         }
         //max num of steps
         if (max < obj[i].cmd.steps) {
@@ -359,11 +361,21 @@ function createMatrix(string_arr){
                 // flag_operands = false;
                 var k = 0;
                 while (obj[i - 1].phase == j && !obj[i - 1].flag && k < obj[i - 1].cmd.operands.length && !status_phase[j] && !wait_flag[j]) {
+                    console.log("var"+stp+" "+variables);
+
                     if (variables.indexOf(obj[i - 1].cmd.operands[k]) != -1) {
+                        // console.log("fo"+stp+" "+obj[i - 1].cmd.name);
                         flag_operands = true;
                         // wait_flag = true;
                     } else if (!flag_operands) {
-                        variables.push(obj[i - 1].cmd.operands[k]);
+                        var tp = 0;
+                        while (tp<obj[i-1].cmd.operands.length) {
+                            variables.push(obj[i - 1].cmd.operands[tp]);
+                            tp++;
+                        }
+                        obj[i - 1].flag = true;
+                        // console.log("nfo"+stp+" "+obj[i - 1].cmd.name);
+
                         // wait_flag = false;
                     }
                     k++;
@@ -371,7 +383,7 @@ function createMatrix(string_arr){
 
 
                 //фаза соответствует .. не было перехода фаз .. переменные свободны .. фаза свободна на шаге .. нет задержки по фазе
-                if (obj[i - 1].phase == j && !obj[i - 1].flag && !flag_operands && !status_phase[j] && !wait_flag[j]) {
+                if (obj[i - 1].phase == j && obj[i - 1].flag && !obj[i - 1].step_flag && !flag_operands && !status_phase[j] && !wait_flag[j]) {
                     final_matrix[stp][j] = obj[i - 1].cmd.name;
                     status_phase[j] = true;
                     tmp_flag = 0;
@@ -417,24 +429,31 @@ function createMatrix(string_arr){
                             }
                             break;
                     }
+                    obj[i - 1].step_flag = true;
                     //obj[i - 1].phase++;
                     if (obj[i-1].phase==6){
                        six++;
+                       k = 0;
+                        while (k < obj[i - 1].cmd.operands.length) {
+                            clear_op.push(obj[i - 1].cmd.operands[k]);
+                            console.log(stp+" "+clear_op);
+                            k++;
+                        }
                     }
-                    obj[i - 1].flag = true;
+                    // obj[i - 1].flag = true;
 
-                    //TODO убрать очистку переменных по флагу, и чтоб не падало
-                    
+                    //TODO: убрать очистку переменных по флагу, и чтоб не падало
+
                     // console.log();
                     // console.log("tm-"+tmp_flag);
                     // if (tmp_flag == 1 && obj[i-1].phase==6){
                     //      console.log("op");
 
-                        k = 0;
-                        while (k < obj[i - 1].cmd.operands.length) {
-                            clear_op.push(obj[i - 1].cmd.operands[k]);
-                            k++;
-                        }
+                        // k = 0;
+                        // while (k < obj[i - 1].cmd.operands.length) {
+                        //     clear_op.push(obj[i - 1].cmd.operands[k]);
+                        //     k++;
+                        // }
                     // }
 
                     // console.log();
@@ -446,7 +465,7 @@ function createMatrix(string_arr){
 
                     // console.log("lel3");
 
-                    if (j > 1 && (obj[i - 1].phase == j && !obj[i - 1].flag && !flag_operands && status_phase[j] || wait_flag[j])) {
+                    if (j > 1 && (obj[i - 1].phase == j && !obj[i - 1].step_flag && status_phase[j] || wait_flag[j])) {
                         final_matrix[stp][j - 1] = final_matrix[stp - 1][j - 1];
                     }
                 }
@@ -468,7 +487,11 @@ function createMatrix(string_arr){
         //очистка переменных
         j = 0;
         while (j < obj.length) {
-            obj[j].flag = false;
+            if (obj[j].cmd.phase==6) {
+                obj[j].flag = false;
+
+            }
+            obj[j].step_flag = false;
             j++;
         }
         j = 1;
@@ -478,7 +501,7 @@ function createMatrix(string_arr){
             j++;
         }
         while (clear_op.length > 0) {
-            console.log("clear - "+clear_op);
+            // console.log("clear - "+clear_op);
             variables.splice(variables.indexOf(clear_op[0]), 1);
             clear_op.shift();
         }
@@ -493,7 +516,7 @@ function createMatrix(string_arr){
     return (final_matrix)
 }
 
-var mas_tmp = ["SUB AX,VAR1", "MOV DX,VAR2", "JMP [DX]", "PUSH VAR3"];
+var mas_tmp = ["SUB AX,VAR1", "MOV DX,VAR1", "JMP [DX]", "PUSH VAR3"];
 
 //console.log(parse(mas_tmp[2]));
 //console.log(createMatrix(mas_tmp));
