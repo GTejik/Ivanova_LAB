@@ -363,11 +363,16 @@ function createMatrix(string_arr){
                 while (obj[i - 1].phase == j && !obj[i - 1].flag && k < obj[i - 1].cmd.operands.length && !status_phase[j] && !wait_flag[j]) {
                     console.log("var"+stp+" "+variables);
 
-                    if (variables.indexOf(obj[i - 1].cmd.operands[k]) != -1) {
-                        // console.log("fo"+stp+" "+obj[i - 1].cmd.name);
-                        flag_operands = true;
-                        // wait_flag = true;
-                    } else if (!flag_operands) {
+                    var tp=0;
+                    while (tp<obj[i-1].cmd.operands.length) {
+                        if (variables.indexOf(obj[i - 1].cmd.operands[tp]) != -1) {
+                            // console.log("fo"+stp+" "+obj[i - 1].cmd.name);
+                            flag_operands = true;
+                            // wait_flag = true;
+                        }
+                        tp++;
+                    }
+                    if (!flag_operands) {
                         var tp = 0;
                         while (tp<obj[i-1].cmd.operands.length) {
                             variables.push(obj[i - 1].cmd.operands[tp]);
@@ -516,7 +521,7 @@ function createMatrix(string_arr){
     return (final_matrix)
 }
 
-var mas_tmp = ["SUB AX,VAR1", "MOV DX,VAR1", "JMP [DX]", "PUSH VAR3"];
+var mas_tmp = ["SUB AX,VAR1", "MOV dx,VAR1", "JMP [DX]", "PUSH VAR3"];
 
 //console.log(parse(mas_tmp[2]));
 //console.log(createMatrix(mas_tmp));
