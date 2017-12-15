@@ -521,7 +521,7 @@ function createMatrix(string_arr){
     return (final_matrix)
 }
 
-var mas_tmp = ["SUB AX,VAR1", "MOV dx,VAR1", "JMP [DX]", "PUSH VAR3"];
+var mas_tmp = ["SUB AX,VAR1", "MOV dx,VAR2", "JMP [DX]", "PUSH VAR3"];
 
 //console.log(parse(mas_tmp[2]));
 //console.log(createMatrix(mas_tmp));
