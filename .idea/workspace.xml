@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="acccf497-8969-4199-a1c1-9d504f937dbc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+=======
+      <change beforePath="$PROJECT_DIR$/conv.js" afterPath="$PROJECT_DIR$/conv.js" />
+      <change beforePath="$PROJECT_DIR$/conveyr.js" afterPath="$PROJECT_DIR$/conveyr.js" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,21 +34,47 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="conv.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conv.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
               <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+=======
+      <file leaf-file-name="conv.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/conv.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
               <caret line="21" column="75" lean-forward="false" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+=======
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="794">
+              <caret line="120" column="22" lean-forward="false" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
               <folding />
             </state>
           </provider>
@@ -64,10 +97,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/conveyr.js" />
         <option value="$PROJECT_DIR$/conv.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
+=======
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
       </list>
     </option>
   </component>
@@ -163,12 +201,20 @@
       <workItem from="1512720875395" duration="19526000" />
       <workItem from="1513003607154" duration="16697000" />
       <workItem from="1513354992282" duration="1923000" />
+<<<<<<< HEAD
       <workItem from="1513441770722" duration="3196000" />
+=======
+      <workItem from="1513441770722" duration="2461000" />
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="41342000" />
+=======
+    <option name="totallyTimeSpent" value="40607000" />
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -289,6 +335,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conveyr.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -297,17 +345,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conveyr.js">
       <provider selected="true" editor-type-id="text-editor">
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/conveyr.js">
+=======
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/main.html">
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="794">
+          <caret line="120" column="22" lean-forward="false" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="17" />
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
           <folding />
         </state>
       </provider>
@@ -320,6 +404,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-768">
@@ -348,6 +433,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="75" lean-forward="false" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+=======
+    <entry file="file://$PROJECT_DIR$/conv.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759
           <folding />
         </state>
       </provider>

@@ -1,4 +1,8 @@
 .panel {
+/*<<<<<<< HEAD*/
+/*=======*/
+/*<<<<<<< HEAD*/
+/*>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759*/
 	position: relative;
 	top: 0;
 	left: 0;
@@ -7,11 +11,25 @@
 	width: 30vw;
 	min-width: 300px;
 	min-height: 100vh;
+/*<<<<<<< HEAD*/
 	background-color: #253759;
 	height:auto;
+/*=======*/
+	/*background-color: #253759; */
+	/*height:auto;*/
+/*=======*/
+    /*background-color: #253759;*/
+    /*width: 30%;*/
+    /*min-width: 30%;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+/*}*/
+/*>>>>>>> 3d5947bafc2a01c2e0d7eba954f1337ce8385394*/
+/*>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759*/
 
 
-	overflow:auto;
+	/*overflow:auto;*/
 }
 
 .header {
@@ -98,6 +116,10 @@
 	right: 0;
 }
 
+/*<<<<<<< HEAD*/
+/*=======*/
+/*<<<<<<< HEAD*/
+/*>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759*/
 .outpanel{
 	position: relative;
 	top: 0;
@@ -109,9 +131,11 @@
 	min-height: 100vh;
 	background-color: #A1A1A1;
 	height:auto;
+/*<<<<<<< HEAD*/
+/*=======*/
 
 
-	overflow:auto;
+	/*overflow:auto;*/
 }
 
 #conveyur{
@@ -119,4 +143,23 @@
 	height: 100%;
 	min-width: 600px;
 	min-height: 100vh;
+/*=======*/
+/*>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759*/
+
+
+	/*overflow:auto;*/
 }
+
+/*<<<<<<< HEAD*/
+/*#conveyur{*/
+	/*width: 100%;*/
+	/*height: 100%;*/
+	/*min-width: 600px;*/
+	/*min-height: 100vh;*/
+/*=======*/
+/*.button1:hover span:after {*/
+    /*opacity: 1;*/
+    /*right: 0;*/
+/*>>>>>>> 3d5947bafc2a01c2e0d7eba954f1337ce8385394*/
+/*>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759*/
+/*}*/
