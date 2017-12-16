@@ -4,7 +4,6 @@ var buf = '';
 
 
 
-
 function matrixArray(rows, columns) {
     var count = 0;
     var arr = [];
@@ -28,8 +27,8 @@ function printMatrix(matrix) {
     console.log(''); // пустая строка после вывода матрицы
 }
 
-var matrix = matrixArray(stages, height);
-printMatrix(matrix);
+// var matrix = matrixArray(stages, height);
+// printMatrix(matrix);
 
 
 
@@ -201,7 +200,7 @@ var commands = {
     }
 };
 
-console.log(commands.DIV.cycles);
+// console.log(commands.DIV.cycles);
 
 // парсим строку
 function parse(cmd_string) {
@@ -361,7 +360,7 @@ function createMatrix(string_arr){
                 // flag_operands = false;
                 var k = 0;
                 while (obj[i - 1].phase == j && !obj[i - 1].flag && k < obj[i - 1].cmd.operands.length && !status_phase[j] && !wait_flag[j]) {
-                    console.log("var"+stp+" "+variables);
+                    //console.log("var"+stp+" "+variables);
 
                     var tp=0;
                     while (tp<obj[i-1].cmd.operands.length) {
@@ -441,7 +440,7 @@ function createMatrix(string_arr){
                        k = 0;
                         while (k < obj[i - 1].cmd.operands.length) {
                             clear_op.push(obj[i - 1].cmd.operands[k]);
-                            console.log(stp+" "+clear_op);
+                            //console.log(stp+" "+clear_op);
                             k++;
                         }
                     }
@@ -521,8 +520,14 @@ function createMatrix(string_arr){
     return (final_matrix)
 }
 
-var mas_tmp = ["SUB AX,VAR1", "MOV dx,VAR2", "JMP [DX]", "PUSH VAR3"];
+// var mas_tmp = ["SUB AX,VAR1", "MOV dx,VAR2", "JMP [DX]", "PUSH VAR3"];
 
-//console.log(parse(mas_tmp[2]));
 //console.log(createMatrix(mas_tmp));
-printMatrix(createMatrix(mas_tmp));
+//console.log(parse(mas_tmp[2]));
+// printMatrix(createMatrix(mas_tmp));
+
+//
+// SUB AX,VAR1
+// MOV dx,VAR2
+// JMP [DX]
+// PUSH VAR3

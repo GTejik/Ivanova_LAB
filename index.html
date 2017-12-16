@@ -2,22 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link href="style.css?1" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
 		<title>Моделирование конвейера</title>
 	</head>
 	<body>
-		<div class="area panel">
+		<div class="panel">
 			<div class="header">Моделирование работы процессорного конвейера</div>
 			<div class="subheader">Квитницкий Евгений, Михаил Плетнев</div>
 			<div class="subheader">МКС 173</div>
-			<div class="controlsDiv">
-				<textarea id="code" class="input" placeholder="Код программы"></textarea>
-				<button id="buttonRun" class="button"><span>Моделировать</span></button>
+			<div class="controlsBlock">
+				<textarea id="code" class="textarea" placeholder="Код программы"></textarea>
 			</div>
+			<div class="buttonDiv">
+				<button id="buttonRun" class="button"><span>Calculate!</span></button>
+			</div>
+			<script src="conv.js"></script>
 		</div>
-		<div class="area page">
-			<textarea id="out" class="output" placeholder="Вывод" disabled></textarea>
-		</div>
-		<script src="base.js?1"></script>
+	<div class="outpanel" >
+		<textarea id="conveyur" class="textarea" placeholder=""></textarea>
+
+	</div>
 	</body>
 </html>
