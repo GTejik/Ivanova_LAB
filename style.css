@@ -59,8 +59,13 @@
 }
 
 
+.output_table {
+	display: flex;
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;     /*Центрирование по вертикали */
+}
+
 .output {
-	resize: none;
 	border: none;
     display: block;
     position: relative;
@@ -68,7 +73,7 @@
     margin: 0 auto;
     float: left;
     padding-left: 2vw;
-    height: 90vh;
+    height: 80vh;
 }
 
 .input {
@@ -82,17 +87,6 @@
     resize: none;
     width: 98%;
     height: 30vh;
-}
-
-.output {
-	resize: none;
-	border: none;
-    display: block;
-    position: relative;
-    width: 93%;
-    margin: 0 auto;
-    float: left;
-    padding-left: 2vw;
 }
 
 

@@ -9,6 +9,72 @@ function include(url) {
 include("./conveyr.js");
 
 
+/*function table ()
+{
+    console.log("TABLE");
+    var array_table = [];
+    for (var i = 0; i < 5; i++)
+    {
+        array_table[i] = [];
+        for (var j = 0; j < 5; j++)
+        {
+            array_table[i][j] = j;
+        }
+    }
+    var code = '<table border="2" width="65%" height="45%" bordercolor="#000000" cellspacing="10" cellpadding="10">';
+    for (var i = 0; i < array_table.length; i++)
+    {
+        code += '<tr>';
+        for (var j = 0; j < array_table[i].length; j++)
+        {
+            code +=  '<td>'+ array_table[i][j] + '</td>';
+        }
+        code += '</tr>';
+    }
+    code += '</table>';
+    console.log(code);
+    var elem = document.getElementById("out");
+    elem.innerHTML = code;
+}*/
+
+function print_matrix_to_table (matrix)
+{
+    console.log("TABLE");
+    var array_table = [];
+    for (var i = 0; i < matrix.length; i++)
+    {
+        array_table[i] = [];
+        for (var j = 0; j < matrix[0].length; j++)
+        {
+            array_table[i][j] = j;
+        }
+    }
+    var code = '<table border="2" width="65%" height="45%" bordercolor="#000000" cellspacing="10" cellpadding="10">';
+    for (var i = 0; i < array_table.length; i++)
+    {
+        code += '<tr>';
+        for (var j = 0; j < array_table[i].length; j++)
+        {
+            if (matrix[i][j] == undefined){
+                matrix[i][j] = "null"
+            }
+            code +=  '<td>'+ matrix[i][j] + '</td>';
+        }
+        code += '</tr>';
+    }
+    code += '</table>';
+    console.log(code);
+    var elem = document.getElementById("out");
+    elem.innerHTML = code;
+}
+
+
+
+
+
+
+
+
 function print_to_txa( textarea , str) {
 
     var i = 0;
@@ -39,13 +105,18 @@ document.getElementById('buttonRun').onclick = function run () {
 
     var input = document.getElementById('code').value;
     var output = document.getElementById('out');
-    output.value = "6576";
+    output.value = "";
+    //table();
+    
+    if (input == "") {
+        alert ('Введите код программы.');
+    } else {
+        console.log(input.toString().split("\n"));
 
-    console.log(input.toString().split("\n"));
+        var matrix = createMatrix(input.toString().split("\n"));
 
-    var matrix = createMatrix(input.toString().split("\n"));
-
-    printMatrix_to_ta(output,matrix);
-
+        //printMatrix_to_ta(output,matrix);
+        print_matrix_to_table(matrix);
+    }
 
 }
