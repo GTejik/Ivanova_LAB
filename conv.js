@@ -49,7 +49,7 @@ function print_matrix_to_table (matrix)
             array_table[i][j] = j;
         }
     }
-    var code = '<table border="2" width="65%" height="45%" bordercolor="#000000" cellspacing="10" cellpadding="10">';
+    var code = '<table style="width: 100%; border-collapse: collapse;" border="2" width="65%" height="45%" bordercolor="#000000" cellspacing="10" cellpadding="10">';
     for (var i = 0; i < array_table.length; i++)
     {
         code += '<tr>';
