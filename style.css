@@ -1,13 +1,9 @@
 .panel {
-<<<<<<< HEAD
 /*<<<<<<< HEAD*/
 /*=======*/
 /*<<<<<<< HEAD*/
 /*>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759*/
 	position: relative;
-=======
-	position: fixed;
->>>>>>> parent of 183b35e... frontend update
 	top: 0;
 	left: 0;
 	float: left;
@@ -15,7 +11,6 @@
 	width: 30vw;
 	min-width: 300px;
 	min-height: 100vh;
-<<<<<<< HEAD
 /*<<<<<<< HEAD*/
 	background-color: #253759;
 	height:auto;
@@ -35,13 +30,6 @@
 
 
 	/*overflow:auto;*/
-=======
-	background-color: #253759; 
-	height:auto;
-
-
-	overflow:auto;
->>>>>>> parent of 183b35e... frontend update
 }
 
 .header {
@@ -87,13 +75,8 @@
 
 
 
-<<<<<<< HEAD
 
 
-=======
-
-
->>>>>>> parent of 183b35e... frontend update
 .button {
 	background-color: #FFFFFF; /* Green */
 	border: none;
@@ -131,7 +114,6 @@
 .button:hover span:after {
 	opacity: 1;
 	right: 0;
-<<<<<<< HEAD
 }
 
 /*<<<<<<< HEAD*/
@@ -181,6 +163,3 @@
 /*>>>>>>> 3d5947bafc2a01c2e0d7eba954f1337ce8385394*/
 /*>>>>>>> 59a4f6321877852f164cf5ff184c8765b9f63759*/
 /*}*/
-=======
-}
->>>>>>> parent of 183b35e... frontend update
