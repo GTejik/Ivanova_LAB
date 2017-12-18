@@ -9,8 +9,7 @@ function include(url) {
 include("./conveyr.js");
 
 
-function print_matrix_to_table (matrix)
-{
+function print_matrix_to_table (matrix) {
     console.log("TABLE");
     var array_table = [];
     for (var i = 0; i < matrix.length; i++)
@@ -21,14 +20,14 @@ function print_matrix_to_table (matrix)
             array_table[i][j] = j;
         }
     }
-    var code = '<table style="width: 100%; border-collapse: collapse;" border="2" bordercolor="#000000" cellspacing="10" cellpadding="10">';
+    var code = '<table style="width: 100%; margin: 2% 0; border-collapse: collapse;" border="2" bordercolor="#000000" cellspacing="10" cellpadding="10">';
     for (var i = 0; i < array_table.length; i++)
     {
         code += '<tr>';
         for (var j = 0; j < array_table[i].length; j++)
         {
             if (matrix[i][j] == undefined){
-                matrix[i][j] = "inactive"
+                matrix[i][j] = ""
                 code +=  '<td class="null_cell">'+ matrix[i][j] + '</td>';
             } else {
                 code +=  '<td>'+ matrix[i][j] + '</td>';
