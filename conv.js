@@ -9,34 +9,6 @@ function include(url) {
 include("./conveyr.js");
 
 
-/*function table ()
-{
-    console.log("TABLE");
-    var array_table = [];
-    for (var i = 0; i < 5; i++)
-    {
-        array_table[i] = [];
-        for (var j = 0; j < 5; j++)
-        {
-            array_table[i][j] = j;
-        }
-    }
-    var code = '<table border="2" width="65%" height="45%" bordercolor="#000000" cellspacing="10" cellpadding="10">';
-    for (var i = 0; i < array_table.length; i++)
-    {
-        code += '<tr>';
-        for (var j = 0; j < array_table[i].length; j++)
-        {
-            code +=  '<td>'+ array_table[i][j] + '</td>';
-        }
-        code += '</tr>';
-    }
-    code += '</table>';
-    console.log(code);
-    var elem = document.getElementById("out");
-    elem.innerHTML = code;
-}*/
-
 function print_matrix_to_table (matrix)
 {
     console.log("TABLE");
@@ -49,16 +21,18 @@ function print_matrix_to_table (matrix)
             array_table[i][j] = j;
         }
     }
-    var code = '<table style="width: 100%; border-collapse: collapse;" border="2" width="65%" height="45%" bordercolor="#000000" cellspacing="10" cellpadding="10">';
+    var code = '<table style="width: 100%; border-collapse: collapse;" border="2" bordercolor="#000000" cellspacing="10" cellpadding="10">';
     for (var i = 0; i < array_table.length; i++)
     {
         code += '<tr>';
         for (var j = 0; j < array_table[i].length; j++)
         {
             if (matrix[i][j] == undefined){
-                matrix[i][j] = "null"
+                matrix[i][j] = "inactive"
+                code +=  '<td class="null_cell">'+ matrix[i][j] + '</td>';
+            } else {
+                code +=  '<td>'+ matrix[i][j] + '</td>';
             }
-            code +=  '<td>'+ matrix[i][j] + '</td>';
         }
         code += '</tr>';
     }
@@ -67,12 +41,6 @@ function print_matrix_to_table (matrix)
     var elem = document.getElementById("out");
     elem.innerHTML = code;
 }
-
-
-
-
-
-
 
 
 function print_to_txa( textarea , str) {

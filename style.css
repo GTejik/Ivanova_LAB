@@ -27,6 +27,8 @@
     background-color: white;
     width: 68%;
     min-width: 300px;
+    height: auto;
+    overflow: auto;
 }
 
 .header {
@@ -66,11 +68,10 @@
 }
 
 .output {
-	border: none;
     display: block;
     position: relative;
     width: 93%;
-    margin: 0 auto;
+    /*margin: 0 auto 5vh auto;*/
     float: left;
     padding-left: 2vw;  
     height: 100vh;
@@ -177,4 +178,14 @@
 .button1:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+
+
+
+/* ------- TABLE STYLES ------- */
+
+
+.null_cell {
+	background: #ffaaa1;
 }
