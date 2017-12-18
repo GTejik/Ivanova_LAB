@@ -36,7 +36,7 @@ function print_matrix_to_table (matrix) {
         code += '</tr>';
     }
     code += '</table>';
-    console.log(code);
+    //console.log(code);
     var elem = document.getElementById("out");
     elem.innerHTML = code;
 }
